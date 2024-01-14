@@ -10,7 +10,7 @@ RUN mvn package -DskipTests && \
     rm -rf /root/.m2 /app/target/*-sources.jar /app/target/*-javadoc.jar
 
 # Stage 2: Runtime Stage
-FROM adoptopenjdk:11-jre-hotspot-bionic
+FROM adoptopenjdk:11-jre-hotspot-alpine
 ENV COMPLAINT_URL=https://4f5ac991-f23a-4e1f-8497-65f31136e50f.mock.pstmn.io
 WORKDIR /app
 COPY --from=build /app/target/ComplaintAPI.jar .
