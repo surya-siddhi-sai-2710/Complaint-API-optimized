@@ -6,7 +6,7 @@ WORKDIR /app
 RUN git clone --depth 1 https://github.com/surya-siddhi-sai-2710/Complaint-API-optimized
  
 # Build the application with Maven
-RUN mvn clean install -DskipTests
+RUN mvn install
  
 # Stage 2: Runtime Stage
 FROM adoptopenjdk:11-jre-hotspot-bionic
