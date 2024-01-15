@@ -1,4 +1,4 @@
-# stage 1: build
+# stage 1: build stage
 FROM maven:3.8.4-openjdk-11 AS build
 ENV COMPLAINT_URL=https://4f5ac991-f23a-4e1f-8497-65f31136e50f.mock.pstmn.io
 WORKDIR /app
@@ -11,10 +11,10 @@ FROM registry.access.redhat.com/ubi8/openjdk-11
 WORKDIR /app
 # Copy only necessary artifacts from the build stage
 COPY --from=build /app/target/ComplaintAPI.jar .
-# Set environment variables if needed
+# Set environment variables
 ENV COMPLAINT_URL=https://4f5ac991-f23a-4e1f-8497-65f31136e50f.mock.pstmn.io
-# Expose the port your application will run on
+# Expose
 EXPOSE 8080
  
-# Define the command to run your application
+# command to run application
 CMD ["java", "-jar", "ComplaintAPI.jar"]
