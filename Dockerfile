@@ -3,7 +3,9 @@ FROM maven:3.8.4-openjdk-11 AS build
 ENV COMPLAINT_URL=https://4f5ac991-f23a-4e1f-8497-65f31136e50f.mock.pstmn.io
 WORKDIR /app
 COPY . .
-RUN mvn install
+# RUN mvn install
+# Clone the GitHub repository
+RUN git clone https://github.com/surya-siddhi-sai-2710/Complaint-API-optimized
 
 
 
