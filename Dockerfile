@@ -11,7 +11,7 @@ COPY . .
 RUN mvn install
  
 # Stage 2: Runtime Stage
-FROM adoptopenjdk:11-jre-hotspot-bionic
+FROM registry.access.redhat.com/ubi8/openjdk-11
 WORKDIR /app
  
 # Copy only necessary artifacts from the build stage
