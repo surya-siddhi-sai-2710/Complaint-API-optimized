@@ -6,6 +6,8 @@ COPY . .
 # RUN mvn install
 # Clone the GitHub repository
 RUN git clone https://github.com/surya-siddhi-sai-2710/Complaint-API-optimized
+WORKDIR /app/ComplaintAPI-URL
+RUN mvn install
 
 
 
